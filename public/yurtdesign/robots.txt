@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Allow all main pages
+Allow: /index.php
+Allow: /about-us.php
+Allow: /contact.php
+Allow: /blog.php
+Allow: /web-design.php
+Allow: /web-software.php
+Allow: /erp.php
+Allow: /crm.php
+Allow: /social-media.php

@@ -1,0 +1,700 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #339999;
+    --primary-dark: #287878;
+    --primary-light: #66b2b2;
+    --text-dark: #2b2e2e;
+    --background-light: #f4f4f4;
+    --accent-yellow: #ffc107;
+    --menu-text-color: #1a1a1a;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: #f3f3f3;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+
+
+.navbar-nav .nav-link {
+    color: var(--menu-text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.navbar {
+    background-color: #fff;
+}
+
+.navbar.scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-toggle-no-icon::after {
+    display: none !important;
+}
+
+.custom-dropdown {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.nav-item.dropdown:hover .custom-dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-dropdown .dropdown-item {
+    color: var(--menu-text-color);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: var(--primary-light);
+    color: #fff;
+}
+
+/* Mobil özelleştirme  575.98px*/
+@media (max-width: 1400px) {
+    .container-fluid.general-pad {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
+}
+
+@media (max-width: 1180px) {
+    .container-fluid.general-pad {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        flex-direction: column !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        align-self: center;
+    }
+
+    .navbar-brand,
+    .navbar img {
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar-toggler {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Navbar için temel geçişler */
+#mainNavbar {
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Scroll sonrası eklenecek 'sticky-active' sınıfı */
+#mainNavbar.sticky-active {
+    position: fixed;
+    top: 0;
+    /* Yukarıdan kayma efekti için başlangıçta ekran dışında olacak, animasyonla 0'a gelecek */
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    /* Diğer elementlerin üzerinde kalması için Bootstrap fixed-top z-index'i */
+    background-color: #ffffff;
+    /* Sabitlendiğinde arka plan rengi (banner-bg'yi ezecek) */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Hafif bir gölge */
+    /* Sabitlendiğinde padding değerleri (py-4 sınıfını ezecek) */
+    padding-top: 0.75rem !important;
+    /* Bootstrap'in py-4 sınıfını ezmek için !important gerekebilir */
+    padding-bottom: 0.75rem !important;
+    transform: translateY(-100%);
+    /* Başlangıçta yukarıda gizli (animasyon için) */
+    animation: slideDownEffect 0.5s forwards ease-out;
+    /* Animasyon tanımı */
+}
+
+@keyframes slideDownEffect {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.navbar-nav .nav-link {
+    color: var(--menu-text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Navbar başlangıç arka planı eğer banner-bg ile gelmiyorsa burada tanımlanmalı */
+/* .navbar { background-color: #fff; } eğer banner-bg yoksa */
+
+
+.dropdown-toggle-no-icon::after {
+    display: none !important;
+}
+
+.custom-dropdown {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.nav-item.dropdown:hover .custom-dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.custom-dropdown .dropdown-item {
+    color: var(--menu-text-color);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: var(--primary-light);
+    color: #fff;
+}
+
+/* Mobil özelleştirme  575.98px*/
+@media (max-width: 1400px) {
+    .container-fluid.general-pad {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
+}
+
+@media (max-width: 1180px) {
+    .container-fluid.general-pad {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .navbar-toggler {
+        align-self: center;
+        /* Hamburger butonunu ortalamak için */
+    }
+
+    .navbar img {
+        /* Logo için */
+        margin-bottom: 0.5rem;
+        /* Logonun altında boşluk */
+    }
+
+    .navbar-toggler {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Google Fonts - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+/* Temel Stiller */
+.main-content {
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.general-pad {
+    padding: 0 12rem;
+}
+
+/* Yazı Stilleri */
+.text-content {
+    max-width: 40rem;
+}
+
+@media (max-width: 1180px) {
+    .text-content {
+        margin-top: 3rem;
+    }
+}
+
+.mini-title {
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+    color: #555;
+    font-weight: 300;
+    margin-bottom: -1rem;
+}
+
+.main-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.3rem;
+    max-width: 700px;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Animasyonlu Buton */
+.btn-animated {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #339999;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-animated:hover {
+    transform: translateY(5px);
+    box-shadow: 0 5px 15px rgba(51, 153, 153, 0.4);
+}
+
+/* GIF Container */
+.gif-container {
+    flex-shrink: 0;
+}
+
+/* Responsive Düzen */
+@media (max-width: 1180px) {
+    .main-content {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 5rem 0;
+    }
+
+    .container-fluid.main-content.general-pad {
+        padding: 2rem 6rem 3rem 6rem !important;
+    }
+
+
+    .text-content {
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description {
+        max-width: 100%;
+    }
+
+    .gif-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .general-pad {
+        padding: 0 3rem !important;
+    }
+
+    .mini-title {
+        font-size: 1.5rem;
+    }
+
+    .main-title {
+        font-size: 3.5rem;
+    }
+
+    .description {
+        font-size: 1.8rem;
+    }
+
+    .btn-animated {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .general-pad {
+        padding: 0 2rem !important;
+    }
+
+    .mini-title {
+        font-size: 1.2rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1.4rem;
+    }
+}
+
+.home-intro {
+    background-color: #f3f3f3;
+}
+
+.hover-effect {
+    width: 22rem;
+    position: relative;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    background: white;
+    overflow: visible;
+    border-radius: 12px;
+    padding-top: 180px;
+    /* Görsele alan açmak için yukarıdan boşluk */
+    margin: 4rem 0 4rem 0 !important;
+}
+
+.hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    /* Hover gibi etkileşimler kartta kalsın */
+}
+
+.floating-image {
+    width: 75%;
+    max-width: 700px;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .floating-image {
+        width: 62%;
+        max-width: 700px;
+    }
+
+    .hover-effect {
+        padding-top: 60px;
+    }
+
+    .card-pt {
+        padding-top: 24.3% !important;
+    }
+}
+
+.card-pt {
+    padding-top: 28.3%;
+}
+
+
+
+
+.title-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.text-font {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-spacer {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+}
+
+.section-bg-1 {
+    background-color: #f3f3f3;
+}
+
+.banner-bg {
+    background-color: #ffffff;
+}
+
+.bg-def {
+    background-color: #f3f3f3 !important;
+}
+
+.banner-text {
+    font-size: 1.2rem;
+}
+
+/* 768px ve üzeri: üst boşluğu ayarla, içerikleri ortala */
+@media (max-width: 768px) {
+    .section-frst-left-side {
+        padding-top: 12vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+
+.site-footer {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    /* Poppins fontunu kullandığınızdan emin olun */
+    background-color: #fff;
+    padding-top: 150px;
+    /* Üstteki kutunun yüksekliği + boşluk için */
+}
+
+/* Üstteki "Call to Action" Kutusu */
+.cta-box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    /* 16px */
+    padding: 2.5rem;
+    /* 40px */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cta-text h2 {
+    color: #1A202C;
+    font-weight: 600;
+    font-size: 1.75rem;
+    /* 28px */
+}
+
+.cta-text p {
+    color: #4A5568;
+    font-size: 1rem;
+    /* 16px */
+}
+
+/* Özel Ana Renk Butonu */
+.btn-primary-custom {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    /* 8px */
+    transition: all 0.3s ease;
+    background-color: #339999;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus {
+    background-color: #297a7a;
+    /* Ana rengin biraz koyusu */
+    border-color: #297a7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(51, 153, 153, 0.2);
+}
+
+/* Footer İçerik Başlıkları */
+.widget-title {
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    /* 16px */
+    color: #339999;
+}
+
+/* Footer Linkleri */
+.footer-links li {
+    margin-bottom: 0.75rem;
+    /* 12px */
+}
+
+.footer-links a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: #1a1a1a;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Abonelik Formu */
+.input-group .form-control {
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.input-group .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(51, 153, 153, 0.25);
+}
+
+
+.input-group .btn-primary-custom {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Mobil Cihazlar İçin Ayarlamalar */
+@media (max-width: 991.98px) {
+    .site-footer {
+        padding-top: 120px;
+    }
+
+    .cta-box {
+        position: relative;
+        transform: translate(-50%, 0);
+        margin-top: -80px;
+        margin-bottom: 40px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .site-footer {
+        text-align: center;
+    }
+
+    .footer-widgets .row>div {
+        margin-bottom: 2rem !important;
+    }
+
+    .input-group {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+.splide__slide {
+    /* Logoları slide içinde dikey ve yatay olarak ortalar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    /* Slider'ın minimum yüksekliği */
+}
+
+.splide__slide img {
+    max-width: 80%;
+    /* Resmin slide'dan taşmamasını sağlar */
+    max-height: 180px;
+    /* Tüm logoların maksimum yüksekliğini sabitler */
+    width: auto;
+    height: auto;
+
+    filter: grayscale(1) hue-rotate(140deg) saturate(5);
+
+    /* Filtre değişiminin yumuşak olması için transition ekliyoruz */
+
+    /* --- YENİ KISIM BİTİŞ --- */
+}
+
+.splide__slide:hover img {
+    /* Fare üzerine gelince tüm filtreleri kaldırarak logonun orijinal rengini gösterir */
+    filter: none;
+}
+
+.splide__track {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
