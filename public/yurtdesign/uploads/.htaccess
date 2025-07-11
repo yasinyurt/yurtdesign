@@ -1,0 +1,11 @@
+# Güvenlik için PHP dosyalarının çalıştırılmasını engelle
+<Files "*.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Sadece belirli dosya türlerine izin ver
+<FilesMatch "\.(jpg|jpeg|png|gif|pdf|doc|docx|zip)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>

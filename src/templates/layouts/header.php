@@ -1,4 +1,4 @@
-<?php include_once ROOT_PATH . '/public/yurtdesign/includes/analytics_tracker.php'; ?>
+<?php include_once dirname(__DIR__, 2) . '/yurtdesign/includes/analytics_tracker.php'; ?>
 <!-- ÜST BAR -->
     <div class="bg-dark text-light py-3 topbar">
         <div class="container-fluid d-flex justify-content-between align-items-center small general-pad">

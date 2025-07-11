@@ -1,6 +1,6 @@
 <?php
 // Bu dosya her sayfada include edilecek
-require_once '../../src/includes/analytics.php';
+require_once '../src/includes/analytics.php';
 
 $analytics = new Analytics();
 

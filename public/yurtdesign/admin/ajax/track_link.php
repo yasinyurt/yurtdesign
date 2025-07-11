@@ -1,6 +1,6 @@
 <?php
-require_once '../../../../src/config.php';
-require_once '../../../../src/includes/analytics.php';
+require_once '../../../src/config.php';
+require_once '../../../src/includes/analytics.php';
 
 header('Content-Type: application/json');
 

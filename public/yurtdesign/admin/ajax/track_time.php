@@ -1,6 +1,6 @@
 <?php
-require_once '../../../../src/config.php';
-require_once '../../../../src/includes/analytics.php';
+require_once '../../../src/config.php';
+require_once '../../../src/includes/analytics.php';
 
 if ($_POST && isset($_POST['page_url']) && isset($_POST['time_spent'])) {
     $analytics = new Analytics();

@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once '../../../src/config.php';
-require_once '../../../src/includes/database.php';
-require_once '../../../src/includes/auth.php';
+require_once '../../src/config.php';
+require_once '../../src/includes/database.php';
+require_once '../../src/includes/auth.php';
 
 if (!isLoggedIn()) {
     header('Location: login.php');
