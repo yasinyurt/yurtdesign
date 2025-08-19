@@ -1,0 +1,29 @@
+/* AOS Custom Styles */
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Ensure smooth transitions for images */
+img[data-aos] {
+    will-change: transform, opacity;
+}
+
+/* Optional: Enhance hover effects for cards */
+.hover-effect {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+    transform: translateY(-10px);
+}
+
+/* Ensure Splide slider compatibility with AOS */
+.splide__slide img {
+    width: 100%;
+    height: auto;
+}
